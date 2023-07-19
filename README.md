@@ -2,7 +2,7 @@
 
 1. Make sure you have the following details available:
    1. Your Supabase project ref
-   2. Your project's service role key, which cna be found [here](https://app.supabase.com/project/sngruicxdhrqfujqijal/settings/api)
+   2. Your project's service role key, which can be found [here](https://app.supabase.com/project/sngruicxdhrqfujqijal/settings/api)
 2. Replace the following values in the `fly.toml` file:
    1. `__project_ref_replace_me__` with your Supabase project ref
    2. `__service_role_key_replace_me__` with your project's service role key
