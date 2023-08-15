@@ -17,4 +17,15 @@ mkdir -p /data/grafana/data
 mkdir -p /data/grafana/plugins 
 mkdir -p /data/prometheus
 
+if [ "$PASSWORD_PROTECTED" = "true" ]; then
+  export GF_AUTH_ANONYMOUS_ENABLED="false"
+
+  export GF_AUTH_BASIC_ENABLED="true"
+  export GF_AUTH_DISABLE_LOGIN_FORM=""
+  export GF_AUTH_DISABLE_SIGNOUT_MENU=""
+
+  export GF_SECURITY_ADMIN_USER="$GRAFANA_USER"
+  export GF_SECURITY_ADMIN_PASSWORD="$GRAFANA_PASSWORD"
+fi
+
 /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf

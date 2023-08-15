@@ -6,7 +6,6 @@ USER root
 
 ENV GF_PATHS_DATA=/data/grafana/data \
     GF_PATHS_PLUGINS=/data/grafana/plugins \
-    GF_AUTH_DISABLE_LOGIN_FORM=true \
     GF_AUTH_ANONYMOUS_ENABLED=true \
     GF_AUTH_ANONYMOUS_ORG_NAME="Main Org." \
     GF_AUTH_ANONYMOUS_ORG_ROLE="Viewer" \
