@@ -4,7 +4,6 @@ app = "supagrafanaprom"
   SUPABASE_PROJECT_REF = "my_supabase_project_ref"
   SUPABASE_SERVICE_ROLE_KEY = "my_service_role_key"
   PASSWORD_PROTECTED = "false"
-  GRAFANA_USERNAME = "my_username"
   GRAFANA_PASSWORD = "my_password"
 
 [http_service]

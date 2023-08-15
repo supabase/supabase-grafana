@@ -24,8 +24,9 @@ if [ "$PASSWORD_PROTECTED" = "true" ]; then
   export GF_AUTH_DISABLE_LOGIN_FORM=""
   export GF_AUTH_DISABLE_SIGNOUT_MENU=""
 
-  export GF_SECURITY_ADMIN_USER="$GRAFANA_USER"
   export GF_SECURITY_ADMIN_PASSWORD="$GRAFANA_PASSWORD"
+
+  cd /usr/share/grafana && grafana-cli admin reset-admin-password "$GRAFANA_PASSWORD"
 fi
 
 /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
