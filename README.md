@@ -1,6 +1,6 @@
 # `supabase-grafana`
 
-Observability for you Supabase project, using Prometheus/Grafana, collecting [~200 metrics](./docs/metrics.md):
+Observability for your Supabase project, using Prometheus/Grafana, collecting [~200 metrics](./docs/metrics.md):
 
 ![./docs/supabase-grafana-prometheus.png](./docs/supabase-grafana-prometheus.png)
 
@@ -36,7 +36,7 @@ Visit [localhost:8000](https://localhost:8000) and login with the credentials:
 
 ## Deploying
 
-If you want to continuously collect metrics for your Project, you can deploy it to a server which is always running
+Deploy this service to a server which is always running to continuously collect metrics for your Supabase project.
 
 ### Using Fly.io
 
