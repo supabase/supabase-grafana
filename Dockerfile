@@ -15,6 +15,7 @@ ENV GF_PATHS_DATA=/data/grafana/data \
     GF_AUTH_PROXY_ENABLED="true" \
     GF_USERS_ALLOW_SIGN_UP=false \
     GF_SERVER_HTTP_ADDR="0.0.0.0" \
+    GF_SERVER_HTTP_PORT=8080 \
     GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH="/var/lib/grafana/dashboards/dashboard.json"
 
 COPY entrypoint.sh /entrypoint.sh
@@ -30,5 +31,7 @@ COPY grafana/dashboard.yml /etc/grafana/provisioning/dashboards/dashboard.yml
 COPY grafana/dashboard.json /var/lib/grafana/dashboards/dashboard.json
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+EXPOSE 8080
 
 ENTRYPOINT ["/entrypoint.sh"]

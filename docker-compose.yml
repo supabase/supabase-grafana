@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  supabase-grafana:
+    build: ./
+    ports:
+      - 8000:8080
+    environment:
+      SUPABASE_PROJECT_REF: ${SUPABASE_PROJECT_REF}
+      SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY}
+      PASSWORD_PROTECTED: ${PASSWORD_PROTECTED}
+      GRAFANA_PASSWORD: ${GRAFANA_PASSWORD}
