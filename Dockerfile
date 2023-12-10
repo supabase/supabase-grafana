@@ -18,19 +18,21 @@ ENV GF_PATHS_DATA=/data/grafana/data \
     GF_SERVER_HTTP_PORT=8080 \
     GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH="/var/lib/grafana/dashboards/dashboard.json"
 
-COPY entrypoint.sh /entrypoint.sh
-
-RUN apt-get update && apt-get install -y supervisor
+RUN apt-get update && \
+    apt-get install -y supervisor jq
 
 COPY --from=prometheus /bin/prometheus /bin/prometheus
 COPY --from=prometheus /usr/share/prometheus /usr/share/prometheus
 COPY prometheus/prometheus.yml /etc/prometheus/prometheus.yml
+COPY prometheus/prometheus.target.yml.tpl /etc/prometheus/prometheus.target.yml.tpl
 
 COPY grafana/datasource.yml /etc/grafana/provisioning/datasources/prometheus.yml
 COPY grafana/dashboard.yml /etc/grafana/provisioning/dashboards/dashboard.yml
 COPY grafana/dashboard.json /var/lib/grafana/dashboards/dashboard.json
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+COPY entrypoint.sh /entrypoint.sh
 
 EXPOSE 8080
 
