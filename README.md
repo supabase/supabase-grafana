@@ -17,6 +17,7 @@ cp .env.example .env
 ```
 
 Fill it out with your project details. You'll need your project ref and service role key, which you can find [here](https://app.supabase.com/project/_/settings/api).
+Alternatively, to monitor multiple projects you'll need to create an access token [here](https://supabase.com/dashboard/account/tokens).
 
 ### Run with Docker
 
