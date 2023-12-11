@@ -6,27 +6,27 @@ Observability for your Supabase project, using Prometheus/Grafana, collecting [~
 
 ## Getting started
 
-To run the collector locally using Docker Compose
+To run the collector locally using Docker Compose:
 
-### Managing secrets
+### Create secrets
 
 Create an `.env` file:
 
 ```
-cp .env.sample .env
+cp .env.example .env
 ```
 
 Fill it out with your project details. You'll need your project ref and service role key, which you can find [here](https://app.supabase.com/project/_/settings/api).
 
-### Running with Docker
+### Run with Docker
 
-After that, simply start docker compose and you will be able to access Grafana
+After that, simply start docker compose and you will be able to access Grafana:
 
 ```
 docker compose up
 ```
 
-### Accessing the dashboard
+### Access the dashboard
 
 Visit [localhost:8000](https://localhost:8000) and login with the credentials:
 
