@@ -1805,6 +1805,20 @@
               "uid": "prometheus"
             },
             "exemplar": false,
+            "expr": "sum(supavisor_connections_active{supabase_project_ref=\"$project\"})",
+            "format": "time_series",
+            "interval": "",
+            "intervalFactor": 1,
+            "legendFormat": "supavisor connections",
+            "refId": "B",
+            "step": 240
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "exemplar": false,
             "expr": "pgbouncer_used_clients{supabase_project_ref=\"$project\"}",
             "format": "time_series",
             "hide": false,
