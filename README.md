@@ -29,6 +29,8 @@ docker compose up
 
 ### Access the dashboard
 
+![./docs/supabase-grafana-prometheus.png](./docs/supabase-grafana-prometheus.png)
+
 Visit [localhost:8000](https://localhost:8000) and login with the credentials:
 
 - Username: `admin`
