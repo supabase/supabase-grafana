@@ -2,7 +2,7 @@
 
 Observability for your Supabase project, using Prometheus/Grafana, collecting [~200 metrics](./docs/metrics.md):
 
-![./docs/supabase-grafana-prometheus.png](./docs/supabase-grafana-prometheus.png)
+![./docs/supabase-grafana.png](./docs/supabase-grafana.png)
 
 ## Getting started
 
@@ -29,11 +29,12 @@ docker compose up
 
 ### Access the dashboard
 
+![./docs/supabase-grafana-prometheus.png](./docs/supabase-grafana-prometheus.png)
+
 Visit [localhost:8000](https://localhost:8000) and login with the credentials:
 
 - Username: `admin`
 - Password: [the password in your `.env` file]
-
 
 ## Deploying
 
