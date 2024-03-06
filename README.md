@@ -50,3 +50,17 @@ Follow these steps:
 2. Run `fly launch` to deploy the app to Fly.
 3. Copy your `.env` file to your Fly project: `fly secrets import < .env`
 4. After a successful deployment, your app will be available at `https://<your-app-name>.fly.dev`
+
+### Using Caprover for self-hosting
+
+You can also run the collector on your own server using [Caprover](https://caprover.com/).
+
+Follow these steps:
+
+1. Create a new app on Caprover with persistent data. <br>
+   Optional:
+   - Set container http port to 8080.
+   - Enable HTTPS and force redirect.
+2. Copy your `.env` file to your Caprover app configuration.
+3. Add persistent storage for the `/data` directory.
+4. Deploy the app.
