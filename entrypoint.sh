@@ -2,6 +2,13 @@
 
 set -e
 
+CONFIG_SET=$(grep -c "customer/v1/privileged" prometheus/prometheus.target.yml.tpl)
+
+if [  $CONFIG_SET -gt 0 ]; then
+  echo "Prometheus config already set. Resetting."
+  echo "global:\n  scrape_interval: 5s\nscrape_configs:" > /etc/prometheus/prometheus.yml
+fi
+
 if [ -z "$SUPABASE_ACCESS_TOKEN" ]; then
   echo "Setting up single-project monitoring."
 
