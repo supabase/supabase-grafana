@@ -29,6 +29,7 @@ COPY prometheus/prometheus.target.yml.tpl /etc/prometheus/prometheus.target.yml.
 COPY grafana/datasource.yml /etc/grafana/provisioning/datasources/prometheus.yml
 COPY grafana/dashboard.yml /etc/grafana/provisioning/dashboards/dashboard.yml
 COPY grafana/dashboard.json /var/lib/grafana/dashboards/dashboard.json
+COPY grafana/supavisor.json /var/lib/grafana/dashboards/supavisor.json
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
