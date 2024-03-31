@@ -2,11 +2,15 @@
 
 set -e
 
-CONFIG_SET=$(grep -c "customer/v1/privileged" prometheus/prometheus.target.yml.tpl)
+PROM_PATH="/etc/prometheus/prometheus.yml"
+SEARCH_STR="customer/v1/privileged"
 
-if [  $CONFIG_SET -gt 0 ]; then
-  echo "Prometheus config already set. Resetting."
-  echo "global:\n  scrape_interval: 5s\nscrape_configs:" > /etc/prometheus/prometheus.yml
+if [ -f "$PROM_PATH" ]; then
+  # Use grep to search for the string in the file
+  if grep -q "$SEARCH_STR" "$PROM_PATH"; then
+    echo "Prometheus config already set. Resetting."
+    cp /etc/prometheus/prometheus.yml.original /etc/prometheus/prometheus.yml
+  fi
 fi
 
 if [ -z "$SUPABASE_ACCESS_TOKEN" ]; then
@@ -22,11 +26,11 @@ if [ -z "$SUPABASE_ACCESS_TOKEN" ]; then
     exit 1
   fi
 
-  cat /etc/prometheus/prometheus.target.yml.tpl >> /etc/prometheus/prometheus.yml
+  cat /etc/prometheus/prometheus.target.yml.tpl >>/etc/prometheus/prometheus.yml
 
   sed -i "s/__SUPABASE_PROJECT_REF__/$SUPABASE_PROJECT_REF/g" /etc/prometheus/prometheus.yml
   sed -i "s/__SUPABASE_SERVICE_ROLE_KEY__/$SUPABASE_SERVICE_ROLE_KEY/g" /etc/prometheus/prometheus.yml
-else 
+else
   echo "Setting up multi-project monitoring."
 
   FILTER='.[] | .id'
@@ -52,15 +56,15 @@ else
 
     SERVICE_ROLE_KEY=$(echo "$API_KEYS_RESPONSE" | jq -r '.[] | select(.name == "service_role") | .api_key')
 
-    cat /etc/prometheus/prometheus.target.yml.tpl >> /etc/prometheus/prometheus.yml
+    cat /etc/prometheus/prometheus.target.yml.tpl >>/etc/prometheus/prometheus.yml
 
     sed -i "s/__SUPABASE_PROJECT_REF__/$PROJECT_REF/g" /etc/prometheus/prometheus.yml
     sed -i "s/__SUPABASE_SERVICE_ROLE_KEY__/$SERVICE_ROLE_KEY/g" /etc/prometheus/prometheus.yml
   done
 fi
 
-mkdir -p /data/grafana/data 
-mkdir -p /data/grafana/plugins 
+mkdir -p /data/grafana/data
+mkdir -p /data/grafana/plugins
 mkdir -p /data/prometheus
 
 if [ "$PASSWORD_PROTECTED" = "true" ]; then
