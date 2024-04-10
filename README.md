@@ -50,3 +50,23 @@ Follow these steps:
 2. Run `fly launch` to deploy the app to Fly.
 3. Copy your `.env` file to your Fly project: `fly secrets import < .env`
 4. After a successful deployment, your app will be available at `https://<your-app-name>.fly.dev`
+
+### Read Replica support
+
+The process for collecting metrics off read replicas is currently somewhat manual. The `prometheus.target.yml.tpl` file can be edited to include the RRs as an independent target.
+
+As an example, if the identifier for your read replica is `foobarbaz-us-east-1-abcdef`, you would insert the following snippet:
+
+
+```yaml
+  - job_name: supabase-foobarbaz-us-east-1-abcdef
+    scheme: https
+    metrics_path: "/customer/v1/privileged/metrics"
+    basic_auth:
+      username: service_role
+      password: __SUPABASE_SERVICE_ROLE_KEY__
+    static_configs:
+      - targets: ["foobarbaz-us-east-1-abcdef.supabase.co"]
+        labels:
+          - supabase_project_ref: "foobarbaz-us-east-1-abcdef"
+```
