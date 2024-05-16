@@ -1,4 +1,13 @@
-app = "supabase-grafana-metrics"
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'supabase-grafana-metrics'
+
+[build]
+
+[[mounts]]
+  source = 'supabase_metrics_data'
+  destination = '/data'
 
 [http_service]
   internal_port = 8080
@@ -6,8 +15,9 @@ app = "supabase-grafana-metrics"
   auto_stop_machines = false
   auto_start_machines = true
   min_machines_running = 1
-  processes = ["app"]
+  processes = ['app']
 
-[mounts]
-  source="supabase_metrics_data"
-  destination="/data"
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
