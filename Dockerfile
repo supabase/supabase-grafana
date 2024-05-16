@@ -23,7 +23,7 @@ RUN apt-get update && \
 
 COPY --from=prometheus /bin/prometheus /bin/prometheus
 COPY --from=prometheus /usr/share/prometheus /usr/share/prometheus
-COPY prometheus/prometheus.yml /etc/prometheus/prometheus.yml
+COPY prometheus/prometheus.yml /etc/prometheus/prometheus.yml.tpl
 COPY prometheus/prometheus.target.yml.tpl /etc/prometheus/prometheus.target.yml.tpl
 
 COPY grafana/datasource.yml /etc/grafana/provisioning/datasources/prometheus.yml
