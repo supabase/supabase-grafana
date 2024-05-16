@@ -2,6 +2,8 @@
 
 set -e
 
+cp /etc/prometheus/prometheus.yml.tpl /etc/prometheus/prometheus.yml
+
 if [ -z "$SUPABASE_ACCESS_TOKEN" ]; then
   echo "Setting up single-project monitoring."
 

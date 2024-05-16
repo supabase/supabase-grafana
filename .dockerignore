@@ -3,3 +3,4 @@
 fly.toml
 docker-compose.yml
 data/
+.env
