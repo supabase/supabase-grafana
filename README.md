@@ -1,6 +1,6 @@
 # `supabase-grafana`
 
-Observability for your Supabase project, using Prometheus/Grafana, collecting [~200 metrics](./docs/metrics.md):
+Observability for your Supabase project, using Prometheus/Grafana, collecting [~200 metrics](./docs/metrics.md) at a granularity of 1 minute:
 
 ![./docs/supabase-grafana.png](./docs/supabase-grafana.png)
 
