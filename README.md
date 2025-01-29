@@ -35,7 +35,7 @@ docker compose up
 
 ![./docs/supabase-grafana-prometheus.png](./docs/supabase-grafana-prometheus.png)
 
-Visit [localhost:8000](https://localhost:8000) and login with the credentials:
+Visit [localhost:8000](http://localhost:8000) and login with the credentials:
 
 - Username: `admin`
 - Password: [the password in your `.env` file]
