@@ -8,9 +8,11 @@ For more information, see our [documentation](https://supabase.com/docs/guides/t
 
 ⚠️ Note that this repository is an example and is not intended for production use. We strongly recommend that you setup metrics collection into your own observability stack, see the [Metrics](https://supabase.com/docs/guides/telemetry/metrics) page in our documentation for guidance.
 
-If you just need the dashboard to import into your own Grafana instance (self-hosted or in the Cloud), you can find the source [here](./grafana/dashboard.json)
+If you just need the dashboard to import into your own Grafana instance (self-hosted or in the Cloud), you can find the source [here](./dashboard.json)
 
-## Getting started
+---
+
+## Self-hosting
 
 To run the collector locally using Docker Compose:
 
@@ -21,7 +23,6 @@ Create an `.env` file:
 ```
 cp .env.example .env
 ```
-
 
 Fill it out with your project details.
 
@@ -46,13 +47,21 @@ Visit [localhost:8000](http://localhost:8000) and login with the credentials:
 - Username: `admin`
 - Password: [the password in your `.env` file]
 
-## Deploying
+---
+
+## Deploying to the Cloud
 
 Deploy this service to a server which is always running to continuously collect metrics for your Supabase project.
 
 You will need:
 1. [Prometheus](https://prometheus.io/docs/introduction/overview/) (or compatible datasource)
 2. [Grafana](https://grafana.com/docs/grafana/latest/)
+
+### Deploy Prometheus
+
+A managed Prometheus instance can be deployed on [Grafana Cloud](https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/) or from Cloud Providers, like [AWS](https://aws.amazon.com/prometheus/) or [Digital Ocean](https://marketplace.digitalocean.com/apps/prometheus).
+
+### Prometheus - Adding your Scrape Job
 
 Configure your Prometheus instance with a scrape job that looks like this:
 ```
@@ -71,11 +80,9 @@ scrape_configs:
           group: "<YOUR LABEL CHOICE>"
 ```
 
-Within your Grafana, ensure there is a datasource for your Prometheus instance called `prometheus` and head to `Dashboards->New->Import` and you can paste the JSON of the [dashboard](./grafana/dashboard.json) and create it.
+### Prometheus - Adding a Scrape Job for your Read Replica(s)
 
-### Read Replica support
-
-The process for collecting metrics off read replicas is currently somewhat manual. The `prometheus.target.yml.tpl` file can be edited to include the RRs as an independent target.
+Scraping your Read Replica for metrics is done as a separate Scrape Job within your Prometheus config. Under the `scrape_config` section, add a new job that looks like the example below.
 
 As an example, if the identifier for your read replica is `foobarbaz-us-east-1-abcdef`, you would insert the following snippet:
 
@@ -92,3 +99,29 @@ As an example, if the identifier for your read replica is `foobarbaz-us-east-1-a
         labels:
           - supabase_project_ref: "foobarbaz-us-east-1-abcdef"
 ```
+### Deploy Grafana
+
+A managed Grafana instance can be deployed on [Grafana Cloud](https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/) or from Cloud Providers, like [AWS](https://aws.amazon.com/grafana/) or [Digital Ocean](https://marketplace.digitalocean.com/apps/grafana).
+
+### Grafana - Add your Prometheus Data Source
+
+Once running, log into your Grafana instance and select `Data Sources` on the left menu. Click `Add data source` and add your Prometheus information:
+- Prometheus Server URL
+- Credentials (where relevant)
+
+Test it, save it and remember the name of your data source.
+
+### Grafana - Add the Supabase Project Dashboard
+
+Select `Dashboards` on the left menu, click `New` and then `Import`. Copy the file contents from this [dashboard](./dashboard.json) and paste it into the JSON field and click `Load`. Give the dashboard a name and select the Prometheus data source that you created previously. The dashboard will then load with the resource usage of your Supabase Project.
+
+![Grafana Dashboard](./docs/supabase-grafana-prometheus.png)
+
+---
+
+## Integrations
+
+There are unofficial, third-party integrations (not affiliated with Supabase available) that are listed below:
+
+1. [Datadog](https://docs.datadoghq.com/integrations/supabase/)
+2. [Grafana Cloud](https://grafana.com/docs/grafana-cloud/monitor-infrastructure/integrations/integration-reference/integration-supabase/)

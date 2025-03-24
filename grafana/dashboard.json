@@ -106,7 +106,7 @@
       "pluginVersion": "8.3.3",
       "targets": [
         {
-          "expr": "(((count(count(node_cpu_seconds_total{supabase_project_ref=\"$project\"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{mode='idle',supabase_project_ref=\"$project\"}[$__rate_interval])))) * 100) / count(count(node_cpu_seconds_total{supabase_project_ref=\"$project\"}) by (cpu))",
+          "expr": "clamp_min(100 - (avg(rate(node_cpu_seconds_total{mode=\"idle\", supabase_project_ref=\"$project\"}[$__rate_interval])) by (instance) * 100), 0)",
           "hide": false,
           "intervalFactor": 1,
           "legendFormat": "",
@@ -15020,8 +15020,8 @@
       {
         "current": {
           "selected": false,
-          "text": "sngruicxdhrqfujqijal",
-          "value": "sngruicxdhrqfujqijal"
+          "text": "",
+          "value": ""
         },
         "datasource": {
           "type": "prometheus",
