@@ -13,3 +13,5 @@ services:
     platform: linux/amd64
     volumes:
       - ./data:/data
+    labels:
+      - traefik.http.services.supabase-grafana.loadbalancer.server.port=8080
