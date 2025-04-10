@@ -8,9 +8,9 @@ datasources:
   access: proxy
   url: http://localhost:9090
   jsonData:
-    timeInterval: "30s"
+    timeInterval: "60s"
     prometheusType: Prometheus
-    prometheusVersion: 2.45.0
+    prometheusVersion: 2.53.4
   manageAlerts: false
   httpMethod: POST
   cacheLevel: 'High'
