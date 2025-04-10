@@ -10,6 +10,5 @@ services:
       SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY}
       PASSWORD_PROTECTED: ${PASSWORD_PROTECTED}
       GRAFANA_PASSWORD: ${GRAFANA_PASSWORD}
-    platform: linux/amd64
     volumes:
       - ./data:/data
