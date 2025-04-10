@@ -1,0 +1,21 @@
+---
+version: 2
+updates:
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - enhancement
+    commit-message:
+      prefix: "chore"
+      include: scope
+    groups:
+      dependencies:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
