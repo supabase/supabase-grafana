@@ -97,7 +97,7 @@ As an example, if the identifier for your read replica is `foobarbaz-us-east-1-a
     static_configs:
       - targets: ["foobarbaz-us-east-1-abcdef.supabase.co"]
         labels:
-          - supabase_project_ref: "foobarbaz-us-east-1-abcdef"
+          supabase_project_ref: "foobarbaz-us-east-1-abcdef"
 ```
 ### Deploy Grafana
 
