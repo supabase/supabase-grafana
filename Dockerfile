@@ -1,4 +1,4 @@
-FROM prom/prometheus:v2.53.4 AS prometheus
+FROM prom/prometheus:v3.3.0 AS prometheus
 
 FROM grafana/grafana:11.6.0-ubuntu AS grafana
 
