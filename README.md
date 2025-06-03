@@ -64,7 +64,8 @@ A managed Prometheus instance can be deployed on [Grafana Cloud](https://grafana
 ### Prometheus - Adding your Scrape Job
 
 Configure your Prometheus instance with a scrape job that looks like this:
-```
+
+```yaml
 scrape_configs:
   - job_name: "<YOUR JOB NAME>"
     metrics_path: "/customer/v1/privileged/metrics"
@@ -97,7 +98,7 @@ As an example, if the identifier for your read replica is `foobarbaz-us-east-1-a
     static_configs:
       - targets: ["foobarbaz-us-east-1-abcdef.supabase.co"]
         labels:
-          supabase_project_ref: "foobarbaz-us-east-1-abcdef"
+          group: "<YOUR LABEL CHOICE>"
 ```
 ### Deploy Grafana
 
