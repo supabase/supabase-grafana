@@ -22,3 +22,14 @@ providers:
       path: /var/lib/grafana/dashboards
       # <bool> use folder names from filesystem to create folders in Grafana
       foldersFromFilesStructure: true
+
+  - name: 'VLLM'
+    orgId: 1
+    folder: 'VLLM'
+    type: file
+    disableDeletion: true
+    updateIntervalSeconds: 60
+    allowUiUpdates: false
+    options:
+      path: /var/lib/grafana/dashboards
+      foldersFromFilesStructure: true

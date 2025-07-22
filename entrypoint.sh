@@ -4,6 +4,17 @@ set -e
 
 cp /etc/prometheus/prometheus.yml.tpl /etc/prometheus/prometheus.yml
 
+# Add VLM server monitoring if configured
+if [ -n "$VLM_SERVER_URL" ]; then
+  echo "Setting up VLM server monitoring for $VLM_SERVER_URL"
+  
+  # Extract host from URL (remove protocol)
+  VLM_HOST=$(echo "$VLM_SERVER_URL" | sed 's|^https\?://||' | sed 's|/.*||')
+  
+  cat /etc/prometheus/prometheus.vlm.target.yml.tpl >> /etc/prometheus/prometheus.yml
+  sed -i "s/__VLM_SERVER_HOST__/$VLM_HOST/g" /etc/prometheus/prometheus.yml
+fi
+
 if [ -z "$SUPABASE_ACCESS_TOKEN" ]; then
   echo "Setting up single-project monitoring."
 

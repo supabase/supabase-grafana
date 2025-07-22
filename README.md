@@ -1,8 +1,12 @@
 # `supabase-grafana`
 
-Observability for your Supabase project, using Prometheus/Grafana, collecting [~200 metrics](./docs/metrics.md) at a granularity of 1 minute:
+Observability for your Supabase project and VLLM servers, using Prometheus/Grafana, collecting [~200 metrics](./docs/metrics.md) at a granularity of 1 minute:
 
 ![./docs/supabase-grafana.png](./docs/supabase-grafana.png)
+
+## VLM Server Monitoring
+
+This monitoring solution now supports monitoring VLLM servers alongside Supabase projects. You can monitor any server that exposes Prometheus-compatible metrics on a `/metrics` endpoint.
 
 For more information, see our [documentation](https://supabase.com/docs/guides/telemetry/metrics)
 
@@ -26,9 +30,9 @@ cp .env.example .env
 
 Fill it out with your project details.
 
-1. To monitor a single project, fill out your `project ref` and `service role key`,  which you can find [here](https://app.supabase.com/project/_/settings/api).
+1. **Supabase Monitoring**: To monitor a single project, fill out your `project ref` and `service role key`, which you can find [here](https://app.supabase.com/project/_/settings/api). Alternatively, to monitor multiple projects you'll need to create an access token [here](https://supabase.com/dashboard/account/tokens).
 
-2. Alternatively, to monitor multiple projects you'll need to create an access token [here](https://supabase.com/dashboard/account/tokens).
+2. **VLM Server Monitoring**: To monitor your VLM server, set the `VLM_SERVER_URL` to your server's URL (e.g., `https://llm.uiuc.chat`). The system will automatically scrape metrics from the `/metrics` endpoint.
 
 ### Run with Docker
 
@@ -42,10 +46,17 @@ docker compose up
 
 ![./docs/supabase-grafana-prometheus.png](./docs/supabase-grafana-prometheus.png)
 
-Visit [localhost:8000](http://localhost:8000) and login with the credentials:
+Visit [localhost:8081](http://localhost:8081) and login with the credentials:
 
 - Username: `admin`
 - Password: [the password in your `.env` file]
+
+You'll see both Supabase and VLM dashboards available in Grafana. The VLM dashboard will be located in the "VLM" folder and includes monitoring for:
+
+- HTTP request rates and response times
+- System resources (CPU, memory)
+- Service availability
+- Model-specific metrics (request rates, inference times)
 
 ---
 
