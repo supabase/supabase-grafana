@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 25,
+  "id": 1,
   "links": [],
   "panels": [
     {
@@ -99,7 +99,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -182,7 +182,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -265,7 +265,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -338,17 +338,19 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "((node_memory_MemTotal_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"} - node_memory_MemFree_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"}) / (node_memory_MemTotal_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"} )) * 100",
+          "editorMode": "code",
+          "expr": "(1 - (node_memory_MemAvailable_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"} / node_memory_MemTotal_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"})) * 100\n",
           "format": "time_series",
           "hide": true,
           "intervalFactor": 1,
+          "range": true,
           "refId": "A",
           "step": 240
         },
@@ -357,10 +359,12 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "100 - ((node_memory_MemAvailable_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"} * 100) / node_memory_MemTotal_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"})",
+          "editorMode": "code",
+          "expr": "((node_memory_MemTotal_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"} - node_memory_MemFree_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"} - node_memory_Buffers_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"} - node_memory_Cached_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"}) / node_memory_MemTotal_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"}) * 100\n\n",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
+          "range": true,
           "refId": "B",
           "step": 240
         }
@@ -373,7 +377,7 @@
         "type": "prometheus",
         "uid": "prometheus"
       },
-      "description": "Used Swap",
+      "description": "Total RAM usage - including buffers and cache",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -401,11 +405,11 @@
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
-                "value": 10
+                "value": 75
               },
               {
                 "color": "rgba(245, 54, 54, 0.9)",
-                "value": 25
+                "value": 90
               }
             ]
           },
@@ -433,20 +437,22 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "((node_memory_SwapTotal_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"} - node_memory_SwapFree_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"}) / (node_memory_SwapTotal_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"} )) * 100",
+          "editorMode": "code",
+          "expr": "((node_memory_MemTotal_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"} - node_memory_MemFree_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"}) / node_memory_MemTotal_bytes{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"}) * 100\n",
           "intervalFactor": 1,
+          "range": true,
           "refId": "A",
           "step": 240
         }
       ],
-      "title": "SWAP Used",
+      "title": "RAM + Cache Used",
       "type": "gauge"
     },
     {
@@ -514,7 +520,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -593,7 +599,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -674,7 +680,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -756,7 +762,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -839,7 +845,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -927,7 +933,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -1012,7 +1018,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -1413,7 +1419,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -1948,7 +1954,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -2458,7 +2464,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -2586,7 +2592,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -2698,7 +2704,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -2812,7 +2818,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -2946,7 +2952,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -3033,7 +3039,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -3151,7 +3157,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -3294,7 +3300,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -3445,7 +3451,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -3597,7 +3603,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -3686,7 +3692,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.0-88993",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -3787,7 +3793,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.6.0",
       "targets": [
         {
           "datasource": {
@@ -3884,7 +3890,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.6.0",
       "targets": [
         {
           "datasource": {
@@ -9812,7 +9818,7 @@
     "to": "now"
   },
   "timepicker": {},
-  "timezone": "",
+  "timezone": "UTC",
   "title": "Supabase Project",
   "uid": "d402d94e-da48-48e4-ac52-53026b96a004",
   "version": 4
