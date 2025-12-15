@@ -26,7 +26,7 @@ cp .env.example .env
 
 Fill it out with your project details.
 
-1. To monitor a single project, fill out your `project ref` and `service role key`,  which you can find [here](https://app.supabase.com/project/_/settings/api).
+1. To monitor a single project, fill out your `project ref` and `secret key` (or `service role key` for legacy keys),  which you can find [here](https://app.supabase.com/project/_/settings/api-keys).
 
 2. Alternatively, to monitor multiple projects you'll need to create an access token [here](https://supabase.com/dashboard/account/tokens).
 
@@ -72,7 +72,7 @@ scrape_configs:
     scheme: https
     basic_auth:
       username: "service_role"
-      password: "YOUR SERVICE KEY"
+      password: "SECRET API KEY OR SERVICE_KEY FOR LEGACY KEYS"
     static_configs:
       - targets: [
         "<YOUR SUPABASE PROJECT REF>.supabase.co:443"
@@ -94,7 +94,7 @@ As an example, if the identifier for your read replica is `foobarbaz-us-east-1-a
     metrics_path: "/customer/v1/privileged/metrics"
     basic_auth:
       username: service_role
-      password: __SUPABASE_SERVICE_ROLE_KEY__
+      password: __SECRET_API_KEY_OR_SERVICE_KEY_FOR_LEGACY_KEYS__
     static_configs:
       - targets: ["foobarbaz-us-east-1-abcdef.supabase.co"]
         labels:
