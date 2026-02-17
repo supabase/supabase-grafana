@@ -7577,7 +7577,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_io_now{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"})",
+              "expr": "node_disk_io_now{supabase_project_ref=\"$project\", supabase_identifier=~\"${supabase_identifier:pipe}\"}",
               "interval": "",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO now",
