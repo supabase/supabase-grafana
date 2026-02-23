@@ -1,6 +1,6 @@
 FROM prom/prometheus:v2.53.4 AS prometheus
 
-FROM grafana/grafana:12.2.0-16711121739-ubuntu AS grafana
+FROM grafana/grafana:12.3.3-ubuntu AS grafana
 
 USER root
 
