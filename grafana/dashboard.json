@@ -4500,7 +4500,8 @@
           "fieldConfig": {
             "defaults": {
               "custom": {},
-              "links": []
+              "links": [],
+              "unit": "bps"
             },
             "overrides": []
           },
