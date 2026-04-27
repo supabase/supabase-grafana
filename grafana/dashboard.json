@@ -91,7 +91,9 @@
         "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -174,7 +176,9 @@
         "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -257,7 +261,9 @@
         "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -330,7 +336,9 @@
         "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -429,7 +437,9 @@
         "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -512,7 +522,9 @@
         "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -591,7 +603,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -672,7 +686,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -754,7 +770,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -837,7 +855,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -925,7 +945,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -1010,7 +1032,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -2721,13 +2745,9 @@
           "step": 240
         }
       ],
-      "title": "Database size ",
+      "title": "Database size",
       "type": "timeseries"
     },
-
-
-
-    
     {
       "datasource": {
         "type": "prometheus",
@@ -2790,9 +2810,9 @@
       },
       "gridPos": {
         "h": 7,
-        "w": 7,
-        "x": 7,
-        "y": 27
+        "w": 24,
+        "x": 0,
+        "y": 34
       },
       "id": 500,
       "options": {
@@ -2811,9 +2831,9 @@
       "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
-          "datasource": { 
-            "type": "prometheus", 
-            "uid": "prometheus" 
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
           },
           "exemplar": false,
           "expr": "sum by (user, mode, supabase_identifier) (supavisor_db_handler_db_connection_count{supabase_project_ref=\"$project\"})",
@@ -2828,106 +2848,6 @@
       "title": "Client Connections to Supavisor",
       "type": "timeseries"
     },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "axisSoftMax": 5,
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "links": [],
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": 0
-              }
-            ]
-          },
-          "unit": "none"
-        }
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 7,
-        "x": 7,
-        "y": 27
-      },
-      "id": 500,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "12.2.0-16711121739",
-      "targets": [
-        {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "exemplar": false,
-          "expr": "sum by (user, mode, supabase_identifier) (supavisor_db_handler_db_connection_count{supabase_project_ref=\"$project\"})",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{mode}} - {{supabase_identifier}} - {{user}}",
-          "refId": "A",
-          "step": 240
-        }
-      ],
-      "title": "Client Connections to Supavisor",
-      "type": "timeseries"
-    },
-
-
-    
     {
       "datasource": {
         "type": "prometheus",
@@ -3147,7 +3067,9 @@
         "orientation": "auto",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -3234,7 +3156,9 @@
         "orientation": "auto",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -3797,7 +3721,9 @@
         "orientation": "auto",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "limit": 2,
           "values": false
@@ -3887,7 +3813,9 @@
         "orientation": "auto",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "fields": "",
           "values": false
         },
@@ -3919,7 +3847,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 34
+        "y": 41
       },
       "id": 337,
       "panels": [],
@@ -3978,7 +3906,7 @@
         "h": 3,
         "w": 3,
         "x": 0,
-        "y": 35
+        "y": 42
       },
       "id": 328,
       "options": {
@@ -3988,7 +3916,9 @@
         "orientation": "auto",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -3997,7 +3927,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.6.0",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -4078,7 +4008,7 @@
         "h": 3,
         "w": 7,
         "x": 3,
-        "y": 35
+        "y": 42
       },
       "id": 329,
       "options": {
@@ -4094,7 +4024,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.6.0",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -4120,7 +4050,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 38
+        "y": 45
       },
       "id": 335,
       "panels": [],
@@ -4203,7 +4133,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 39
+        "y": 46
       },
       "id": 332,
       "options": {
@@ -4216,7 +4146,7 @@
           "mode": "multi"
         }
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -4353,7 +4283,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 39
+        "y": 46
       },
       "id": 333,
       "options": {
@@ -4366,7 +4296,7 @@
           "mode": "multi"
         }
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -4503,7 +4433,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 39
+        "y": 46
       },
       "id": 340,
       "options": {
@@ -4516,7 +4446,7 @@
           "mode": "multi"
         }
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "12.2.0-16711121739",
       "targets": [
         {
           "datasource": {
@@ -4557,7 +4487,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 46
+        "y": 53
       },
       "id": 265,
       "panels": [
@@ -5102,7 +5032,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 54
       },
       "id": 266,
       "panels": [
@@ -5935,7 +5865,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 48
+        "y": 55
       },
       "id": 267,
       "panels": [
@@ -6146,7 +6076,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 57
       },
       "id": 312,
       "panels": [
@@ -6236,7 +6166,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 51
+        "y": 58
       },
       "id": 269,
       "panels": [
@@ -6397,7 +6327,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 54
+        "y": 61
       },
       "id": 270,
       "panels": [
@@ -6817,7 +6747,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 55
+        "y": 62
       },
       "id": 271,
       "panels": [
@@ -7040,7 +6970,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 56
+        "y": 63
       },
       "id": 272,
       "panels": [
@@ -7441,7 +7371,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 59
+        "y": 66
       },
       "id": 279,
       "panels": [
