@@ -38,6 +38,14 @@ After that, simply start docker compose and you will be able to access Grafana:
 docker compose up
 ```
 
+#### Updating the Dashboard
+
+If you are running a version of this repo from before 27th April 2026, run
+```
+docker compose up -d --build
+```
+to rebuild the images and allow live changes in the dashboard to be reflected in your deployment
+
 ### Access the dashboard
 
 ![./docs/supabase-grafana-dashboard.png](./docs/supabase-grafana-dashboard.png)
