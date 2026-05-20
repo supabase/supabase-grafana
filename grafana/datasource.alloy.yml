@@ -1,0 +1,18 @@
+apiVersion: 1
+
+datasources:
+  - name: prometheus
+    datasourceUid: prometheus
+    isDefault: true
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    jsonData:
+      timeInterval: "60s"
+      prometheusType: Prometheus
+      prometheusVersion: 3.11.3
+    manageAlerts: false
+    httpMethod: POST
+    cacheLevel: "High"
+    incrementalQuerying: true
+    incrementalQueryOverlapWindow: 10m
