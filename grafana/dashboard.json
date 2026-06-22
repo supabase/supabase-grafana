@@ -91,7 +91,9 @@
         "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -174,7 +176,9 @@
         "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -257,7 +261,9 @@
         "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -330,7 +336,9 @@
         "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -429,7 +437,9 @@
         "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -512,7 +522,9 @@
         "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -591,7 +603,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -672,7 +686,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -754,7 +770,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -837,7 +855,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -925,7 +945,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -1010,7 +1032,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -2724,210 +2748,6 @@
       "title": "Database size ",
       "type": "timeseries"
     },
-
-
-
-    
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "axisSoftMax": 100,
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "links": [],
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": 0
-              }
-            ]
-          },
-          "unit": "none"
-        }
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 7,
-        "x": 7,
-        "y": 27
-      },
-      "id": 500,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "12.2.0-16711121739",
-      "targets": [
-        {
-          "datasource": { 
-            "type": "prometheus", 
-            "uid": "prometheus" 
-          },
-          "exemplar": false,
-          "expr": "sum by (user, mode, supabase_identifier) (supavisor_db_handler_db_connection_count{supabase_project_ref=\"$project\"})",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{mode}} - {{supabase_identifier}} - {{user}}",
-          "refId": "A",
-          "step": 240
-        }
-      ],
-      "title": "Client Connections to Supavisor",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "axisSoftMax": 5,
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "links": [],
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": 0
-              }
-            ]
-          },
-          "unit": "none"
-        }
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 7,
-        "x": 7,
-        "y": 27
-      },
-      "id": 500,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "12.2.0-16711121739",
-      "targets": [
-        {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "exemplar": false,
-          "expr": "sum by (user, mode, supabase_identifier) (supavisor_db_handler_db_connection_count{supabase_project_ref=\"$project\"})",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{mode}} - {{supabase_identifier}} - {{user}}",
-          "refId": "A",
-          "step": 240
-        }
-      ],
-      "title": "Client Connections to Supavisor",
-      "type": "timeseries"
-    },
-
-
-    
     {
       "datasource": {
         "type": "prometheus",
@@ -3147,7 +2967,9 @@
         "orientation": "auto",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -3234,7 +3056,9 @@
         "orientation": "auto",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -3797,7 +3621,9 @@
         "orientation": "auto",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "limit": 2,
           "values": false
@@ -3887,7 +3713,9 @@
         "orientation": "auto",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "fields": "",
           "values": false
         },
@@ -3914,12 +3742,1886 @@
       "type": "stat"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
         "y": 34
+      },
+      "id": 600,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Active client connections for the selected tenant, broken down by user, database and pool mode.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 25,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "normal"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "min": 0,
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 0
+          },
+          "id": 601,
+          "options": {
+            "legend": {
+              "calcs": [
+                "last",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true,
+              "sortBy": "Last",
+              "sortDesc": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "12.0.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "sum(supavisor_connections_active{supabase_project_ref=\"$project\"}) by (user, db_name, mode)",
+              "interval": "",
+              "legendFormat": "{{mode}} \u00b7 {{user}}@{{db_name}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Active clients",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Pool connections for the selected tenant, broken down by user, database, pool mode and state (checked out vs idle).",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 25,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "normal"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "min": 0,
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 0
+          },
+          "id": 602,
+          "options": {
+            "legend": {
+              "calcs": [
+                "last",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true,
+              "sortBy": "Last",
+              "sortDesc": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "12.0.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "sum(supavisor_pool_connections_checked_out{supabase_project_ref=\"$project\"}) by (user, db_name, mode)",
+              "interval": "",
+              "legendFormat": "{{mode}} \u00b7 {{user}}@{{db_name}} \u00b7 checked_out",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "sum(supavisor_pool_connections_idle{supabase_project_ref=\"$project\"}) by (user, db_name, mode)",
+              "hide": false,
+              "interval": "",
+              "legendFormat": "{{mode}} \u00b7 {{user}}@{{db_name}} \u00b7 idle",
+              "range": true,
+              "refId": "B"
+            }
+          ],
+          "title": "Pool connections",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Percentage of client queries falling in each latency window, for the selected tenant. Bands stack to 100%.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 60,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "normal"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "min": 0,
+              "max": 100,
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "0-1ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#3f9e5f"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "1-5ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#4aa863"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "5-10ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#5bae5d"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "10-100ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#86b94f"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "100-500ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#c2c24c"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "0.5-1s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#e0a347"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "1-2.5s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#df8444"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "2.5-5s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#d56541"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "5-10s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#c4493e"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "10-15s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#ab2f39"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "15s+"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#8b1a2f"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 8
+          },
+          "id": 603,
+          "maxDataPoints": 100,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "12.0.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"1\"}[$__rate_interval])) / sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "0-1ms",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"5\"}[$__rate_interval])) - sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"1\"}[$__rate_interval]))) / sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "1-5ms",
+              "range": true,
+              "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"10\"}[$__rate_interval])) - sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"5\"}[$__rate_interval]))) / sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "5-10ms",
+              "range": true,
+              "refId": "C"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"100\"}[$__rate_interval])) - sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"10\"}[$__rate_interval]))) / sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "10-100ms",
+              "range": true,
+              "refId": "D"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"500\"}[$__rate_interval])) - sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"100\"}[$__rate_interval]))) / sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "100-500ms",
+              "range": true,
+              "refId": "E"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"1000\"}[$__rate_interval])) - sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"500\"}[$__rate_interval]))) / sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "0.5-1s",
+              "range": true,
+              "refId": "F"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"2500\"}[$__rate_interval])) - sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"1000\"}[$__rate_interval]))) / sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "1-2.5s",
+              "range": true,
+              "refId": "G"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"5000\"}[$__rate_interval])) - sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"2500\"}[$__rate_interval]))) / sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "2.5-5s",
+              "range": true,
+              "refId": "H"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"10000\"}[$__rate_interval])) - sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"5000\"}[$__rate_interval]))) / sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "5-10s",
+              "range": true,
+              "refId": "I"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"15000\"}[$__rate_interval])) - sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"10000\"}[$__rate_interval]))) / sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "10-15s",
+              "range": true,
+              "refId": "J"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval])) - sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"15000\"}[$__rate_interval]))) / sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "15s+",
+              "range": true,
+              "refId": "K"
+            }
+          ],
+          "title": "Query latency (all pools)",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Client queries per second for the selected tenant, broken down by user, database and pool mode.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "reqps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 8
+          },
+          "id": 607,
+          "interval": "1m",
+          "options": {
+            "legend": {
+              "calcs": [
+                "last",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true,
+              "sortBy": "Last",
+              "sortDesc": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "12.0.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "sum(rate(supavisor_client_queries_count{supabase_project_ref=\"$project\"}[$__rate_interval])) by (user, db_name, mode)",
+              "interval": "",
+              "legendFormat": "{{mode}} \u00b7 {{user}}@{{db_name}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Queries per second",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Percentage of client connections falling in each latency window, for the selected tenant. Bands stack to 100%.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 60,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "normal"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "min": 0,
+              "max": 100,
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "0-1ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#3f9e5f"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "1-5ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#4aa863"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "5-10ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#5bae5d"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "10-100ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#86b94f"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "100-500ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#c2c24c"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "0.5-1s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#e0a347"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "1-2.5s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#df8444"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "2.5-5s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#d56541"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "5-10s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#c4493e"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "10-15s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#ab2f39"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "15s+"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#8b1a2f"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 16
+          },
+          "id": 605,
+          "maxDataPoints": 100,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "12.0.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"1\"}[$__rate_interval])) / sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "0-1ms",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"5\"}[$__rate_interval])) - sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"1\"}[$__rate_interval]))) / sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "1-5ms",
+              "range": true,
+              "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"10\"}[$__rate_interval])) - sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"5\"}[$__rate_interval]))) / sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "5-10ms",
+              "range": true,
+              "refId": "C"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"100\"}[$__rate_interval])) - sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"10\"}[$__rate_interval]))) / sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "10-100ms",
+              "range": true,
+              "refId": "D"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"500\"}[$__rate_interval])) - sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"100\"}[$__rate_interval]))) / sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "100-500ms",
+              "range": true,
+              "refId": "E"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"1000\"}[$__rate_interval])) - sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"500\"}[$__rate_interval]))) / sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "0.5-1s",
+              "range": true,
+              "refId": "F"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"2500\"}[$__rate_interval])) - sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"1000\"}[$__rate_interval]))) / sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "1-2.5s",
+              "range": true,
+              "refId": "G"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"5000\"}[$__rate_interval])) - sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"2500\"}[$__rate_interval]))) / sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "2.5-5s",
+              "range": true,
+              "refId": "H"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"10000\"}[$__rate_interval])) - sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"5000\"}[$__rate_interval]))) / sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "5-10s",
+              "range": true,
+              "refId": "I"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"15000\"}[$__rate_interval])) - sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"10000\"}[$__rate_interval]))) / sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "10-15s",
+              "range": true,
+              "refId": "J"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval])) - sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"15000\"}[$__rate_interval]))) / sum(rate(supavisor_client_connection_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "15s+",
+              "range": true,
+              "refId": "K"
+            }
+          ],
+          "title": "Client connection latency (all pools)",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Client connections established per second for the selected tenant, broken down by user, database and pool mode. Derived from the connection-duration histogram count.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "cps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 16
+          },
+          "id": 606,
+          "interval": "1m",
+          "options": {
+            "legend": {
+              "calcs": [
+                "last",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true,
+              "sortBy": "Last",
+              "sortDesc": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "12.0.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "sum(rate(supavisor_client_connection_duration_count{supabase_project_ref=\"$project\"}[$__rate_interval])) by (user, db_name, mode)",
+              "interval": "",
+              "legendFormat": "{{mode}} \u00b7 {{user}}@{{db_name}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Connections per second",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Percentage of pool checkouts (local) falling in each latency window, for the selected tenant. Bands stack to 100%.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 60,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "normal"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "min": 0,
+              "max": 100,
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "0-1ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#3f9e5f"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "1-5ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#4aa863"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "5-10ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#5bae5d"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "10-100ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#86b94f"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "100-500ms"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#c2c24c"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "0.5-1s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#e0a347"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "1-2.5s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#df8444"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "2.5-5s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#d56541"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "5-10s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#c4493e"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "10-15s"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#ab2f39"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "15s+"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "#8b1a2f"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 24
+          },
+          "id": 604,
+          "maxDataPoints": 100,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "12.0.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"1\"}[$__rate_interval])) / sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "0-1ms",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"5\"}[$__rate_interval])) - sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"1\"}[$__rate_interval]))) / sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "1-5ms",
+              "range": true,
+              "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"10\"}[$__rate_interval])) - sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"5\"}[$__rate_interval]))) / sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "5-10ms",
+              "range": true,
+              "refId": "C"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"100\"}[$__rate_interval])) - sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"10\"}[$__rate_interval]))) / sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "10-100ms",
+              "range": true,
+              "refId": "D"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"500\"}[$__rate_interval])) - sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"100\"}[$__rate_interval]))) / sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "100-500ms",
+              "range": true,
+              "refId": "E"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"1000\"}[$__rate_interval])) - sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"500\"}[$__rate_interval]))) / sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "0.5-1s",
+              "range": true,
+              "refId": "F"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"2500\"}[$__rate_interval])) - sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"1000\"}[$__rate_interval]))) / sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "1-2.5s",
+              "range": true,
+              "refId": "G"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"5000\"}[$__rate_interval])) - sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"2500\"}[$__rate_interval]))) / sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "2.5-5s",
+              "range": true,
+              "refId": "H"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"10000\"}[$__rate_interval])) - sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"5000\"}[$__rate_interval]))) / sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "5-10s",
+              "range": true,
+              "refId": "I"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"15000\"}[$__rate_interval])) - sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"10000\"}[$__rate_interval]))) / sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "10-15s",
+              "range": true,
+              "refId": "J"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval])) - sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"15000\"}[$__rate_interval]))) / sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval]))",
+              "interval": "",
+              "legendFormat": "15s+",
+              "range": true,
+              "refId": "K"
+            }
+          ],
+          "title": "Pool checkout latency (all pools)",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Percentage of client queries slower than 1s (over the selected range).",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "min": 0,
+              "max": 100,
+              "decimals": 2,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "#EAB839",
+                    "value": 1
+                  },
+                  {
+                    "color": "red",
+                    "value": 5
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 8,
+            "x": 0,
+            "y": 32
+          },
+          "id": 608,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "12.0.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (1 - sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"1000\"}[$__rate_interval])) / sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval])))",
+              "interval": "",
+              "legendFormat": "",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Queries > 1s",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Percentage of client queries slower than 5s (over the selected range).",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "min": 0,
+              "max": 100,
+              "decimals": 2,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "#EAB839",
+                    "value": 0.5
+                  },
+                  {
+                    "color": "red",
+                    "value": 2
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 8,
+            "x": 8,
+            "y": 32
+          },
+          "id": 609,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "12.0.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (1 - sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"5000\"}[$__rate_interval])) / sum(rate(supavisor_client_query_duration_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval])))",
+              "interval": "",
+              "legendFormat": "",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Queries > 5s",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "Percentage of pool checkouts that waited longer than 1s \u2014 a sign of pool starvation.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "min": 0,
+              "max": 100,
+              "decimals": 2,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "#EAB839",
+                    "value": 0.1
+                  },
+                  {
+                    "color": "red",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 8,
+            "x": 16,
+            "y": 32
+          },
+          "id": 610,
+          "options": {
+            "colorMode": "background",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "12.0.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "100 * (1 - sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"1000\"}[$__rate_interval])) / sum(rate(supavisor_pool_checkout_duration_local_bucket{supabase_project_ref=\"$project\", le=\"+Inf\"}[$__rate_interval])))",
+              "interval": "",
+              "legendFormat": "",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Checkouts > 1s",
+          "type": "stat"
+        }
+      ],
+      "title": "Supavisor (shared pooler)",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 35
       },
       "id": 337,
       "panels": [],
@@ -3978,7 +5680,7 @@
         "h": 3,
         "w": 3,
         "x": 0,
-        "y": 35
+        "y": 36
       },
       "id": 328,
       "options": {
@@ -3988,7 +5690,9 @@
         "orientation": "auto",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -4078,7 +5782,7 @@
         "h": 3,
         "w": 7,
         "x": 3,
-        "y": 35
+        "y": 36
       },
       "id": 329,
       "options": {
@@ -4120,7 +5824,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 38
+        "y": 39
       },
       "id": 335,
       "panels": [],
@@ -4203,7 +5907,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 39
+        "y": 40
       },
       "id": 332,
       "options": {
@@ -4353,7 +6057,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 39
+        "y": 40
       },
       "id": 333,
       "options": {
@@ -4503,7 +6207,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 39
+        "y": 40
       },
       "id": 340,
       "options": {
@@ -4557,7 +6261,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 46
+        "y": 47
       },
       "id": 265,
       "panels": [
@@ -5102,7 +6806,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 48
       },
       "id": 266,
       "panels": [
@@ -5935,7 +7639,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 48
+        "y": 49
       },
       "id": 267,
       "panels": [
@@ -6146,7 +7850,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 50
       },
       "id": 293,
       "panels": [
@@ -6367,7 +8071,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 51
       },
       "id": 312,
       "panels": [
@@ -6735,7 +8439,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 51
+        "y": 52
       },
       "id": 269,
       "panels": [
@@ -7058,7 +8762,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 52
+        "y": 53
       },
       "id": 304,
       "panels": [
@@ -7253,7 +8957,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 53
+        "y": 54
       },
       "id": 296,
       "panels": [
@@ -7393,7 +9097,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 54
+        "y": 55
       },
       "id": 270,
       "panels": [
@@ -7813,7 +9517,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 55
+        "y": 56
       },
       "id": 271,
       "panels": [
@@ -8090,7 +9794,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 56
+        "y": 57
       },
       "id": 272,
       "panels": [
@@ -8817,7 +10521,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 57
+        "y": 58
       },
       "id": 273,
       "panels": [
@@ -9152,7 +10856,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 58
+        "y": 59
       },
       "id": 274,
       "panels": [
@@ -9845,7 +11549,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 59
+        "y": 60
       },
       "id": 279,
       "panels": [
