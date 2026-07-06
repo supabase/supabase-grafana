@@ -3756,7 +3756,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "description": "Active client connections for the selected tenant, broken down by user, database and pool mode.",
+          "description": "Number of client connections currently open to Supavisor for this project, broken down by user, database and pool mode. Counts every connected client the whole time it is connected, whether or not it is running a query right now.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3854,7 +3854,7 @@
               "refId": "A"
             }
           ],
-          "title": "Active clients",
+          "title": "Connected clients",
           "type": "timeseries"
         },
         {
@@ -3862,7 +3862,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "description": "Pool connections for the selected tenant, broken down by user, database, pool mode and state (checked out vs idle).",
+          "description": "Postgres connections Supavisor keeps in its pools for this project, broken down by user, database and pool mode, split into in-use (currently checked out) and idle (open and available).",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3974,7 +3974,7 @@
               "refId": "B"
             }
           ],
-          "title": "Pool connections",
+          "title": "Managed Postgres connections",
           "type": "timeseries"
         },
         {
@@ -3982,7 +3982,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "description": "Percentage of client queries falling in each latency window, for the selected tenant. Bands stack to 100%.",
+          "description": "How long Supavisor's connection stays busy handling a client for this project, shown as the share in each band. Timing starts when an idle connection receives its first message from the client and a Postgres connection is taken from the pool, and ends when Postgres reports it is ready for the next query. Everything the client sends in between (one or more statements, up to a full transaction) counts as a single measurement, and the time includes running those statements on the database. Only transactions that complete are recorded: if the connection is closed or killed first (for example an idle-in-transaction timeout, a client disconnect, or an error), that transaction does not appear here.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4370,7 +4370,7 @@
               "refId": "K"
             }
           ],
-          "title": "Query latency (all pools)",
+          "title": "Transaction time (all pools)",
           "type": "timeseries"
         },
         {
@@ -4378,7 +4378,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "description": "Client queries per second for the selected tenant, broken down by user, database and pool mode.",
+          "description": "Supavisor client transactions per second for this project, broken down by user, database and pool mode. Each measurement is one transaction, not necessarily a single SQL statement.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4476,7 +4476,7 @@
               "refId": "A"
             }
           ],
-          "title": "Queries per second",
+          "title": "Transactions per second",
           "type": "timeseries"
         },
         {
@@ -4484,7 +4484,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "description": "Percentage of client connections falling in each latency window, for the selected tenant. Bands stack to 100%.",
+          "description": "How long it takes to open a new client connection to Supavisor for this project, shown as the share of connections in each band. Timed from the TCP connection until the connection is ready for queries, including authentication and TLS handshake. Measured once per connection.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4872,7 +4872,7 @@
               "refId": "K"
             }
           ],
-          "title": "Client connection latency (all pools)",
+          "title": "Client connection time (all pools)",
           "type": "timeseries"
         },
         {
@@ -4880,7 +4880,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "description": "Client connections established per second for the selected tenant, broken down by user, database and pool mode. Derived from the connection-duration histogram count.",
+          "description": "New Supavisor client connections opened per second for this project, broken down by user, database and pool mode.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4986,7 +4986,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "description": "Percentage of pool checkouts (local) falling in each latency window, for the selected tenant. Bands stack to 100%.",
+          "description": "How long Supavisor waits to get a free Postgres connection from the pool before running a client's query, for this project, shown as the share of checkouts in each latency band. This is waiting time only; it does not include running the query. High values mean the pool is running out of free connections.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -5382,7 +5382,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "description": "Percentage of client queries slower than 1s (over the selected range).",
+          "description": "Share of Supavisor transactions slower than 1s for this project, over the selected range.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -5452,7 +5452,7 @@
               "refId": "A"
             }
           ],
-          "title": "Queries > 1s",
+          "title": "Transactions > 1s",
           "type": "stat"
         },
         {
@@ -5460,7 +5460,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "description": "Percentage of client queries slower than 5s (over the selected range).",
+          "description": "Share of Supavisor transactions slower than 5s for this project, over the selected range.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -5530,7 +5530,7 @@
               "refId": "A"
             }
           ],
-          "title": "Queries > 5s",
+          "title": "Transactions > 5s",
           "type": "stat"
         },
         {
@@ -5538,7 +5538,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "description": "Percentage of pool checkouts that waited longer than 1s \u2014 a sign of pool starvation.",
+          "description": "Share of pool checkouts where Supavisor waited longer than 1s for a free Postgres connection, for this project, a sign the pool is overloaded and has contention.",
           "fieldConfig": {
             "defaults": {
               "color": {
