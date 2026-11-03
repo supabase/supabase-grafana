@@ -12,3 +12,6 @@ services:
       GRAFANA_PASSWORD: ${GRAFANA_PASSWORD}
     volumes:
       - ./data:/data
+      - ./grafana/dashboard.json:/var/lib/grafana/dashboards/dashboard.json:ro
+      - ./grafana/dashboard.yml:/etc/grafana/provisioning/dashboards/dashboard.yml:ro
+      - ./grafana/datasource.yml:/etc/grafana/provisioning/datasources/prometheus.yml:ro
