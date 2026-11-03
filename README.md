@@ -4,11 +4,17 @@ Observability for your Supabase project, using Prometheus/Grafana, collecting [~
 
 ![./docs/supabase-grafana.png](./docs/supabase-grafana.png)
 
-For more information, see our [documentation](https://supabase.com/docs/guides/telemetry/metrics)
+For more information, see our [documentation](https://supabase.com/docs/guides/observability/metrics)
 
-⚠️ Note that this repository is an example and is not intended for production use. We strongly recommend that you setup metrics collection into your own observability stack, see the [Metrics](https://supabase.com/docs/guides/telemetry/metrics) page in our documentation for guidance.
+⚠️ Note that this repository is an example and is not intended for production use. We strongly recommend that you setup metrics collection into your own observability stack, see the [Metrics](https://supabase.com/docs/guides/observability/metrics) page in our documentation for guidance.
 
 If you just need the dashboard to import into your own Grafana instance (self-hosted or in the Cloud), you can find the source [here](./dashboard.json)
+
+## Quickest setup: Grafana Cloud integration
+
+The fastest way to get these dashboards is the one-click integration in the Supabase Dashboard. It configures authentication, metric scraping, and the prebuilt dashboard for you. [Add the Grafana Cloud integration](https://supabase.com/dashboard/project/_/integrations/grafana-cloud/overview?utm_source=github&utm_medium=readme&utm_campaign=supabase_grafana_cloud_one_click_integration).
+
+Use the manual steps below only if you need a custom setup or self-hosted Prometheus.
 
 ---
 
